@@ -18,7 +18,7 @@ require_once('classes.php');
  * Credit: headBust content unceremoniously copied from a past project, which
  *         was provided at the time via a professor (or possibly a TA), whom
  *         likely copied it as well. Code reuse at its worst.
- * /
+ */
 $headBust = '<style id="antiClickjack">body{display:none !important;}</style>'.
     ' <script type="text/javascript">'.
     ' if (self === top) {'.
