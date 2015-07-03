@@ -76,7 +76,11 @@ $team = getTeam("$name");
         // close curl resource to free up system resources
         curl_close($ch);
         
-        
+        /**
+         * Warning! The following code is extremely "sensitive" to the 
+         * Wikipedia Web API, in terms of naming and structure. Change
+         * with caution.
+         */
         $pages = json_decode($output)->query->pages;
         foreach($pages as $page) {
           echo "<b>Wikipedia: </b>".$page->title."<br>";
