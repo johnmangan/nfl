@@ -2,17 +2,23 @@
 
 /******************************************************************
  * This file acts as an abstaction for the database, to be used by
- * the rest of the web-app. Within this file, all queries are to
- * be prepared statements in order to prevent SQL injection.
+ * the rest of the web-app. Within this file, all queries are to be
+ * prepared statements in order to prevent SQL injection.
  * 
  * This file also serves as a utility toolbox for other security
  * concerns, such as enabling anti-Clickjack code and preventing
- * URL injection.
+ * URL injection. All user defined input should pass through the
+ * functions provided at the top of this document (getGet/getPost).
  *****************************************************************/
 
 require_once('classes.php');
 
-// Echo this within every page's <HEAD> tag to avoid click-jacking.
+/**
+ * Echo this within every page's <HEAD> tag to avoid click-jacking.
+ * Credit: headBust content unceremoniously copied from a past project, which
+ *         was provided at the time via a professor (or possibly a TA), whom
+ *         likely copied it as well. Code reuse at its worst.
+ * /
 $headBust = '<style id="antiClickjack">body{display:none !important;}</style>'.
     ' <script type="text/javascript">'.
     ' if (self === top) {'.
